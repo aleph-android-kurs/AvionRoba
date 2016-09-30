@@ -11,8 +11,8 @@ import java.util.Collection;
  */
 public class Avion {
 
-    private static final String POLJE_OZNAKA = "oznaka";
-    private static final String POLJE_RASPON_KRILA = "raspon_krila";
+    public static final String POLJE_OZNAKA = "oznaka";
+    public static final String POLJE_RASPON_KRILA = "raspon_krila";
 
     @DatabaseField(generatedId = true)
     private int id;
@@ -63,5 +63,13 @@ public class Avion {
 
     public void setRoba(ForeignCollection<Roba> roba) {
         this.roba = roba;
+    }
+
+       public String toString() {
+           return "Avion{" +
+                "id=" + id +
+                ", oznaka='" + oznaka + '\'' +
+                ", rasponKrila=" + rasponKrila +
+                '}';
     }
 }

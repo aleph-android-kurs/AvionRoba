@@ -7,12 +7,12 @@ import com.j256.ormlite.field.DatabaseField;
  */
 public class Roba {
 
-    private static final String POLJE_NAZIV = "naziv";
-    private static final String POLJE_OPIS = "opis";
-    private static final String POLJE_TEZINA = "tezina";
-    private static final String POLJE_VISINA = "visina";
-    private static final String POLJE_DUZINA = "duzina";
-    private static final String POLJE_SIRINA = "sirina";
+    public static final String POLJE_NAZIV = "naziv";
+    public static final String POLJE_OPIS = "opis";
+    public static final String POLJE_TEZINA = "tezina";
+    public static final String POLJE_VISINA = "visina";
+    public static final String POLJE_DUZINA = "duzina";
+    public static final String POLJE_SIRINA = "sirina";
 
     @DatabaseField(generatedId = true)
     private int id;
@@ -113,5 +113,17 @@ public class Roba {
 
     public void setAvion(Avion avion) {
         this.avion = avion;
+    }
+
+    public String toString() {
+        return "Roba{" +
+                "id=" + id +
+                ", naziv='" + naziv + '\'' +
+                ", opis='" + opis + '\'' +
+                ", tezina=" + tezina +
+                ", visina=" + visina +
+                ", duzina=" + duzina +
+                ", sirina=" + sirina +
+                '}';
     }
 }
