@@ -34,13 +34,15 @@ public class Roba {
     @DatabaseField(columnName = POLJE_SIRINA, canBeNull = false)
     private double sirina;
 
+    @DatabaseField(foreign = true, foreignAutoRefresh = true, canBeNull = true)
+    private Avion avion;
+
     //Konstrutkor bez parametara
     public Roba() {
         //Obavezan za potrebe ORMLite-a
     }
 
-    public Roba(int id, String naziv, String opis, double tezina, double visina, double duzina, double sirina) {
-        this.id = id;
+    public Roba(String naziv, String opis, double tezina, double visina, double duzina, double sirina) {
         this.naziv = naziv;
         this.opis = opis;
         this.tezina = tezina;
@@ -103,5 +105,13 @@ public class Roba {
 
     public void setId(int id) {
         this.id = id;
+    }
+
+    public Avion getAvion() {
+        return avion;
+    }
+
+    public void setAvion(Avion avion) {
+        this.avion = avion;
     }
 }
